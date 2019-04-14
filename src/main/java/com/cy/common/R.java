@@ -1,5 +1,9 @@
 package com.cy.common;
 
+
+import lombok.Data;
+
+@Data
 public class R<T> {
 
     private String message = "success";
@@ -11,7 +15,12 @@ public class R<T> {
         this.data = data;
     }
 
-    public R(String message, String code, T data) {
+    public R( T data,String message) {
+        this.message = message;
+        this.data = data;
+    }
+
+    public R( T data,String code,String message) {
         this.message = message;
         this.code = code;
         this.data = data;
